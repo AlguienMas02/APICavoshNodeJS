@@ -5,16 +5,6 @@
 create database cavosh;
 use cavosh;
 
---
--- Estructura de tabla para la tabla `extras`
---
-
-CREATE TABLE `extras` (
-  `id` int(11) NOT NULL,
-  `nombre` int(35) NOT NULL,
-  `precio` decimal(6,2) NOT NULL,
-  `producto_id` int(11) NOT NULL
-);
 
 -- --------------------------------------------------------
 
@@ -87,11 +77,6 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
---
--- AUTO_INCREMENT de la tabla `extras`
---
-ALTER TABLE `extras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -115,10 +100,9 @@ ALTER TABLE `usuarios`
 -- Restricciones para tablas volcadas
 --
 
---
--- Filtros para la tabla `extras`
---
-ALTER TABLE `extras`
-  ADD CONSTRAINT `llavef` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`);
-COMMIT;
 
+
+INSERT INTO `productos` (`id`, `nombre`, `precio`) VALUES 
+(NULL, 'Caramel Machiatto', '9.40'), 
+(NULL, 'Cappuchino Tradicional', '5.00'), 
+(NULL, 'Caffe Mocha', '7.00');
