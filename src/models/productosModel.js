@@ -13,8 +13,9 @@ class ProductosModel {
     }
 
     getProductosByNombre(nombre, callback) {
-        const sql = 'SELECT * FROM productos WHERE nombre = ?';
-        db.query(sql, [nombre], callback);
+        const sql = 'SELECT * FROM productos WHERE nombre LIKE ?';
+        const searchTerm = `%${nombre}%`;
+        db.query(sql, [searchTerm], callback);
     }
 
     postProductos(nombre, precio, categoria, callback) {
